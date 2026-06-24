@@ -1,12 +1,24 @@
-import './App.css'
-import DZ10_06_2026 from "./DZ10_06_2026/DZ10_06_2026.jsx";
+import ProductCard from "./DZ12_06_2026/ProductCard";
+import { products } from "./DZ12_06_2026/products";
 
 function App() {
   return (
-    <>
-      <DZ10_06_2026 />
-    </>
-  )
+    <div
+      style={{
+        display: "flex",
+        gap: "20px",
+        justifyContent: "center",
+        marginTop: "40px",
+      }}
+    >
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default App
+export default App;
