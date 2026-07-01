@@ -1,12 +1,22 @@
 import "./ProductCard.css";
 import CartButton from "./CartButton";
 
-function ProductCard({ product }) {
+function ProductCard({
+  product,
+  isFavorite,
+  onFavorite,
+  onCart,
+}) {
   return (
     <div className="card">
       <img src={product.image} alt={product.name} />
 
-      <div className="favorite">♡</div>
+      <div
+        className="favorite"
+        onClick={() => onFavorite(product)}
+      >
+        {isFavorite ? "❤️" : "🤍"}
+      </div>
 
       <h3>{product.name}</h3>
 
@@ -29,7 +39,7 @@ function ProductCard({ product }) {
         </span>
       </div>
 
-      <CartButton />
+      <CartButton onClick={() => onCart(product)} />
     </div>
   );
 }

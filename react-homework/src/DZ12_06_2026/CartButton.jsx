@@ -1,6 +1,9 @@
-function CartButton() {
+function CartButton({ onClick }) {
   return (
-    <button className="cart-btn">
+    <button
+      className="cart-btn"
+      onClick={onClick}
+    >
       🛒
     </button>
   );
